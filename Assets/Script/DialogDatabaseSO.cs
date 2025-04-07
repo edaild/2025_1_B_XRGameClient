@@ -10,7 +10,7 @@ public class DialogDatabaseSO : ScriptableObject
 
     private Dictionary<int, DialogSO> dialogsByld;          // Ä³½ÌÀ» À§ÇÑ µñ¼Å³Ê¸® »ç¿ë
 
-    public void Initailize()
+    public void Initalize()
     {
         dialogsByld = new Dictionary<int, DialogSO>();
 
@@ -23,10 +23,10 @@ public class DialogDatabaseSO : ScriptableObject
         }
     }
 
-    public DialogSO GetBialogByld(int id)
+    public DialogSO GetDialogByld(int id)
     {
         if (dialogsByld == null)
-            Initailize();
+            Initalize();
 
         if(dialogsByld.TryGetValue(id, out DialogSO dialog))
             return dialog;
