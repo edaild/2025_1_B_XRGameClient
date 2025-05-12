@@ -87,7 +87,7 @@ public class CardManager : MonoBehaviour
 
         if(cardDiisplay != null)
         {
-            cardDiisplay.SetyoCard(cardData);
+            cardDiisplay.SetuoCard(cardData);
             cardDiisplay.cardIndex = handCards.Count -1;
             cardObjects.Add(cardobj);
         }

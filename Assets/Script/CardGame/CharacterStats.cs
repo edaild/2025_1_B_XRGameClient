@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CaracterStats : MonoBehaviour
+public class CharacterStats : MonoBehaviour
 {
     public string characterName;
     public int maxHealth = 100;
@@ -68,6 +68,11 @@ public class CaracterStats : MonoBehaviour
         if(healthText != null)
         {
             healthText.text = $"{currentHealth} / {maxHealth}";
+        }
+
+        if (manaBar != null)
+        {
+            manaBar.value = (float)currentMana / maxMana;
         }
 
         if (manaText != null)
