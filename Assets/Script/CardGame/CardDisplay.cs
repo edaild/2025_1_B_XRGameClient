@@ -256,10 +256,10 @@ public class CardDisplay : MonoBehaviour
                     break;
 
                 case CardData.AdditionalEffectType.ReduceEnemyMana:
-                    GameObject[] eenemies = GameObject.FindGameObjectsWithTag("Ebentg");        // 테그를 사용하여 플레이어 캐릭터 찾가
-                    foreach (var enemy in eenemies)
+                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Ebentg");        // 테그를 사용하여 플레이어 캐릭터 찾가
+                    foreach (var enemy in enemies)
                     {
-                        CharacterController enemyhStats = enemy.GetComponent<CharacterController>();
+                        CharacterStats enemyhStats = enemy.GetComponent<CharacterStats>();
                         if (enemyhStats != null)
                         {
                             enemyhStats.UseMana(effect.effectAmount);

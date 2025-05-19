@@ -31,11 +31,27 @@ public class CharacterStats : MonoBehaviour
     public void takeDamage(int damage)
     {
         currentHealth -= damage;
+
+        if (DamageEffectManager.Instance != null)
+        {
+            Vector3 position = transform.position;
+            // 랜덤 위치 오프셋 추가
+            position += new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(1f, 1.5f), 0);
+
+            DamageEffectManager.Instance.ShowDamage(position,damage,false);
+        }
     }
 
     public void Heal(int amount)
     {
-        currentHealth += amount;
+        if (DamageEffectManager.Instance != null)
+        {
+            Vector3 position = transform.position;
+            // 랜덤 위치 오프셋 추가
+            position += new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(1f, 1.5f), 0);
+
+            DamageEffectManager.Instance.ShowHeal(position, amount, false);
+        }
     }
 
     public void UseMana(int amount)
